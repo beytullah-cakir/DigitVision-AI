@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MNIST Rakam Tanıma - AI</title>
+    <!-- Google Fonts üzerinden Outfit fontunu yüklüyoruz -->
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <style>
+      /* Uygulamanın ana renk paleti ve değişkenleri */
       :root {
         --primary: #6366f1;
         --primary-hover: #4f46e5;
@@ -30,6 +32,7 @@
         overflow-x: hidden;
       }
 
+      /* Ana kart konteyneri */
       .container {
         background: var(--card-bg);
         padding: 2.5rem;
@@ -59,6 +62,7 @@
         margin-bottom: 0.5rem;
         background: linear-gradient(to right, #818cf8, #c084fc);
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
@@ -67,6 +71,7 @@
         margin-bottom: 2rem;
       }
 
+      /* Çizim alanı konteyneri */
       #canvas-container {
         position: relative;
         background: #000;
@@ -129,6 +134,7 @@
         background: #475569;
       }
 
+      /* Tahmin sonuçlarının gösterildiği alan */
       #result-container {
         padding: 1.5rem;
         background: rgba(255, 255, 255, 0.05);
@@ -156,6 +162,7 @@
         display: none;
       }
 
+      /* Yükleniyor animasyonu */
       .loading-spinner {
         width: 30px;
         height: 30px;
@@ -178,15 +185,18 @@
       <h1>MNIST Tanıyıcı</h1>
       <p>Aşağıdaki alana 0-9 arası bir rakam çizin.</p>
 
+      <!-- Çizim Tuvali -->
       <div id="canvas-container">
         <canvas id="digit-canvas" width="280" height="280"></canvas>
       </div>
 
+      <!-- Kontrol Butonları -->
       <div class="controls">
         <button id="clear-btn">Temizle</button>
         <button id="predict-btn">Tahmin Et</button>
       </div>
 
+      <!-- Sonuç Ekranı -->
       <div id="result-container">
         <div id="placeholder-text">Çizim yapın ve Tahmin Et'e basın.</div>
         <div class="loading-spinner" id="loader"></div>
@@ -195,6 +205,7 @@
       </div>
     </div>
 
+    <!-- JavaScript dosyasını dahil ediyoruz -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
